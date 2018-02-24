@@ -1,6 +1,12 @@
 # Jobs Vacancy
 Este aplicativo é um buscador de vagas, feito com objetivos de estudo.
 
+# Requisitos
+- Ionic Framework 3
+- Cordova
+- Um editor de código preferido
+- Para instalar a ultima versão de ambos basta rodar o comando "npm i -g ionic cordova"
+- Um café quentinho
 
 # Passos para rodar em seu celular
 - fazer o clone do projeto
