@@ -1,19 +1,30 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
+import { VacancyListPage } from '../vacancy-list/vacancy-list';
 import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { VancancyPage } from '../vacancy/vancancy';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab1Root = VancancyPage;
+  tab2Root = VacancyListPage;
   tab3Root = ContactPage;
+  
 
-  constructor() {
+  constructor(private _alert: AlertController) {
 
+  }
+
+  ionViewDidLoad() {
+    let alert = this._alert.create({
+        title: 'Sucesso!',
+        subTitle: 'Você está logado!',
+        buttons: ['OK']
+    });
+    alert.present();
   }
 }

@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Registrar
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form>
+        <ion-item>
+            <ion-label stacked>Empresa</ion-label>
+            <ion-input name="company" [(ngModel)]="company.company"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>E-mail</ion-label>
+            <ion-input name="email" [(ngModel)]="company.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Senha</ion-label>
+            <ion-input name="secret" type="password" [(ngModel)]="company.secret"></ion-input>
+        </ion-item>
+        <!-- abrir galeria nativamente... TODO -->
+        <ion-label padding stacked>Logo</ion-label>
+        <div class="centered-button" padding>
+            <img *ngIf="picture" [src]="picture" width="150" height="150"/>
+            <div padding>
+                <button ion-button primary (click)="getPicture()" icon-start>
+                <ion-icon name="reverse-camera"></ion-icon>
+                    Escolher
+                </button>
+            </div>
+        </div>
+        <div class="centered-button">
+            <button (click)="getAddress()" ion-button secondary icon-start>
+                <ion-icon name="locate"></ion-icon>
+                Localize-me
+            </button>
+        </div>
+        <ion-item *ngIf="addressExists">
+            <ion-label stacked>Rua</ion-label>
+            <ion-input name="street" [(ngModel)]="address.street"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="addressExists">
+            <ion-label stacked>Bairro</ion-label>
+            <ion-input name="district" [(ngModel)]="address.district"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="addressExists">
+            <ion-label stacked>Número</ion-label>
+            <ion-input name="number" [(ngModel)]="address.number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="addressExists">
+            <ion-label stacked>Cidade</ion-label>
+            <ion-input name="city" [(ngModel)]="address.city"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="addressExists">
+            <ion-label stacked>Estado</ion-label>
+            <ion-input name="state" [(ngModel)]="address.state"></ion-input>
+        </ion-item>
+        <div padding>
+            <button *ngIf="addressExists" ion-button color="danger" (click)="resetAddress()" icon-start>
+            <ion-icon name="trash"></ion-icon>
+                Limpar
+            </button>
+            <button *ngIf="addressExists" ion-button color="secondary" (click)="gotoTabsPage()" icon-start>
+                <ion-icon name="checkmark"></ion-icon>
+                Confirmar
+            </button>
+        </div>
+    </form>
+</ion-content>

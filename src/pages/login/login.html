@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Login
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <form>
+            <ion-item>
+                <ion-label stacked>E-mail</ion-label>
+                <ion-input name="email" type="email" [(ngModel)]="company.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Senha</ion-label>
+                <ion-input name="secret" type="password" [(ngModel)]="company.secret"></ion-input>
+            </ion-item>
+            <div class="centered-button" padding>
+                <button (click)="login()" ion-button secondary>Entrar</button>
+            </div>
+        </form>
+    </ion-list>
+    <p class="centered-text">Não tem conta? <a (click)="gotoRegisterPage()">Crie uma</a></p>
+</ion-content>

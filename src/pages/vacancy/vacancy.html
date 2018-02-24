@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Nova Vaga
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <form>
+            <ion-item>
+                <ion-label stacked>Cargo</ion-label>
+                <ion-input name="office" [(ngModel)]="vacancy.office"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Descrição</ion-label>
+                <ion-input name="description" [(ngModel)]="vacancy.description"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Regime</ion-label>
+                <ion-input name="policy" [(ngModel)]="vacancy.policy"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Benefícios</ion-label>
+                <ion-input name="benefits" [(ngModel)]="vacancy.benefits"></ion-input>
+            </ion-item>    
+            <ion-item>
+                <ion-label stacked>Salário</ion-label>
+                <ion-input name="salary" [(ngModel)]="vacancy.salary"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Cidade</ion-label>
+                <ion-input name="city" [(ngModel)]="vacancy.city"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Estado</ion-label>
+                <ion-input name="state" [(ngModel)]="vacancy.state"></ion-input>
+            </ion-item>
+            <div  class="centered-button" padding>
+                <button (click)="saveVacancy()" type="submit" ion-button icon-start>
+                <ion-icon name="add-circle"></ion-icon>
+                    Salvar
+                </button>
+            </div>
+        </form>
+    </ion-list>
+</ion-content>

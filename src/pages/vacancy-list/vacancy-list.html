@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Vagas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form>
+      <ion-item>
+        <ion-label stacked>Cargo</ion-label>
+        <ion-input></ion-input>        
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Cidade</ion-label>
+          <ion-input></ion-input>        
+        </ion-item>
+        <div padding>
+          <button (click)="findVacancies()" ion-button secondary icon-start>
+            <ion-icon name="search"></ion-icon>
+            Procurar
+          </button>
+          <button *ngIf="showCleanButton" (click)="cleanVacancies()" color="danger" icon-start ion-button>
+            <ion-icon name="trash"></ion-icon>
+            Limpar
+          </button>                  
+        </div>
+    </form>
+    <div *ngIf="showVacancies">
+      <ion-card  *ngFor="let vacancy of vacancies">
+        <img src="http://sm.pcmag.com/t/pcmag_ap/news/m/mwc-facebo/mwc-facebook-continues-its-quest-for-global-connectivity_sm82.640.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            <b>Cargo: {{vacancy.office}}</b>
+          </ion-card-title>
+          <p>Empresa: Google</p>
+          <p>Salário: {{vacancy.salary | currency}}</p>
+            <button (click)="showVacancyInfo(vacancy)"color="dark" ion-button>Info</button>
+        </ion-card-content>
+      </ion-card> 
+    </div>
+      
+</ion-content>
