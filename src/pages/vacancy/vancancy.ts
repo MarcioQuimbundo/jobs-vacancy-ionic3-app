@@ -7,6 +7,9 @@ import { Vacancy } from "../../app/models/vacancy";
 })
 export class VancancyPage implements OnInit {
     vacancy: Vacancy;
+    policyOptions: string[] = ['CLT', 'Freelancer', 'Estágio'];
+    salaryOptions: string[] = ['1.000 a 2.000', '2.000 a 4.000', '4.000 a 7.000', '7.000 a 15.000'];
+
     constructor(private _toast: ToastController, private _navCtrl: NavController) {
         
     }

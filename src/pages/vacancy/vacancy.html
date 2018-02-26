@@ -19,7 +19,9 @@
             </ion-item>
             <ion-item>
                 <ion-label stacked>Regime</ion-label>
-                <ion-input name="policy" [(ngModel)]="vacancy.policy"></ion-input>
+                <ion-select name="policy" [(ngModel)]="vacancy.policy">
+                    <ion-option *ngFor="let item of policyOptions" value="{{item}}">{{item}}</ion-option> 
+                </ion-select>
             </ion-item>
             <ion-item>
                 <ion-label stacked>Benefícios</ion-label>
@@ -27,7 +29,9 @@
             </ion-item>    
             <ion-item>
                 <ion-label stacked>Salário</ion-label>
-                <ion-input name="salary" [(ngModel)]="vacancy.salary"></ion-input>
+                <ion-select name="salary" [(ngModel)]="vacancy.salary">
+                    <ion-option *ngFor="let item of salaryOptions" value="{{item}}">{{item}}</ion-option>
+                </ion-select>
             </ion-item>
             <ion-item>
                 <ion-label stacked>Cidade</ion-label>
